@@ -1,4 +1,4 @@
-// const fs = require('fs');
+const fs = require('fs');
 
 //async. -- non blocking
 //sync   -- blocking
@@ -7,6 +7,21 @@
 // fs.writeFile("sample.txt","Hello world this update file",(err)=>{
     // console.log(err)
 // })
+
+// fs.writeFile("newfile.txt", "this is a new file",err =>{
+//     if(err) throw err;
+//     console.log(err);
+// });
+
+const data = ["d.txt","e.txt","f.txt"];
+for(const filename of data)
+{
+    fs.writeFile(`${filename}`,"file which is being written", err => {
+        if(err) throw err;
+        console.log(`${filename} written`);
+
+    })
+}
 
 // const files = ['a.txt','b.txt','c.txt'];
 
@@ -73,14 +88,14 @@
 // }
 // read();
 
-const fspromises = require('fs').promises
+// const fspromises = require('fs').promises
 
-async function read() {
+// async function read() {
 
-    const data = await fspromises.readFile('p.txt','utf8')
-    console.log(data);
-}
-read();
+//     const data = await fspromises.readFile('p.txt','utf8')
+//     console.log(data);
+// }
+// read();
 
 
 
