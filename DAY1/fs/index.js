@@ -13,15 +13,15 @@ const fs = require('fs');
 //     console.log(err);
 // });
 
-const data = ["d.txt","e.txt","f.txt"];
-for(const filename of data)
-{
-    fs.writeFile(`${filename}`,"file which is being written", err => {
-        if(err) throw err;
-        console.log(`${filename} written`);
+// const data = ["d.txt","e.txt","f.txt"];
+// for(const filename of data)
+// {
+//     fs.writeFile(`${filename}`,"file which is being written", err => {
+//         if(err) throw err;
+//         console.log(`${filename} written`);
 
-    })
-}
+//     })
+// }
 
 // const files = ['a.txt','b.txt','c.txt'];
 
@@ -34,6 +34,10 @@ for(const filename of data)
 //  }
 
 
+// fs.readFile("newfile.txt","utf-8",(err,data)=> {
+//     if(err) throw err;
+//     console.log(data);
+// })
 
 // fs.readFile("sample.txt", "utf-8", (err,data)=> {
 //     if(err){
@@ -42,9 +46,42 @@ for(const filename of data)
 //     console.log(data);
 // })
 
+// const readfilelist = ["d.txt", "e.txt", "f.txt"];
+// for (const file of readfilelist)
+// {
+//     fs.readFile(`${file}`,"utf-8",(err,data)=>{
+//         if(err) throw err;
+//         console.log("(..) viewing the content of file ==> ",`${file}`,"\n" ,data);
+//     })
+// }
+
+// const listoffile = ["d.txt", "e.txt", "f.txt"];
+// for(const filename of listoffile)
+// {
+//     fs.appendFile(`${filename}`,"\n new data appending data in ", (err)=> {
+//         if(err) throw err;
+//         console.log(`Data appended to ${filename}`);
+//     })
+// }
 
 // fs.appendFile("sample.txt", "\n i am new line using append", err => {console.log(err)});
+
 // fs.unlink("sample.txt", err => {console.log(err)});
+
+// fs.readdir('./trash/newtrash/hello',(err,files)=>{
+//     if(err) throw err;
+//     console.log(files);
+
+//     for(const filename of files)
+//     {
+//         fs.unlink(`./trash/newtrash/hello/${filename}`,err => {
+//             if(err) throw err;
+//             console.log(`${filename} deleted`);
+//         })
+//     }
+// })
+
+
 
 // fs.rename("sample.txt","samplerename.txt", err => { console.log(err)});
 // fs.copyFile("samplerename.txt","copiedfile.txt", err => {console.log(err)});
@@ -73,10 +110,17 @@ for(const filename of data)
 //     console.log(err);
 // }
 
-// fs.stat('samplerename.txt',(err,stats)=> { if(err) throw err; console.log(stats.isFile(), stats.size, stats.fs, stats.mode, stats.blksize) });
+
+// fs.stat('samplerename.txt',(err,stats)=> { 
+//     if(err) throw err; 
+//     console.log(" stats.isfile = ",stats.isFile(), "\n stats.size =",stats.size,"\n stats.fs = ", stats.fs, "\n stats.mode =",stats.mode, "\n stats.blksize =", stats.blksize) });
 
 // fs.watch('p.txt', (eventType,filename) => {
 //     console.log(`Event: ${eventType} on file: ${filename}`);
+// });
+
+// fs.watch('samplerename.txt',(evenType,filename) => {
+//     console.log(`Event: ${evenType} on file: ${filename}`);
 // });
 
 // const fspromises = require('fs').promises
